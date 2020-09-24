@@ -1,17 +1,17 @@
 <!-- Displaying movie list macro  -->
 {% macro displayMovieList(movie_list) %}
-
+<div class="d-flex flex-wrap ">
     {% for movie in movie_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-            <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-fluid">
-            <li class="text-center">
-                <a href="/movie/{{movie.id}}">
-                    {{ movie.title|truncate(10)}}</a>
-            </li>
+        
+        <div class="card col-lg-3 col-md-6 m-2 p-2" >
+            <img src="{{movie.poster}}" class="card-img-top" alt="{{movie.title}}">
+            <div class="card-body">
+            <h5 class="card-title font-weight-bold">{{ movie.title|truncate(10)}}</h5>
+
+            </div>
         </div>
-
     {% endfor %}
-
+</div>
 {% endmacro %}
 
 <!-- Displaying reviews macro -->
